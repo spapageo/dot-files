@@ -1,0 +1,30 @@
+set relativenumber number
+set showmode
+set so=5
+set incsearch
+set nu
+
+let g:argtextobj_pairs="[:],(:),<:>"
+
+let mapleader=" "
+
+noremap n nzzzv
+noremap N nzzzv
+noremap <C-d> <C-d>zz
+noremap <C-u> <C-u>zz
+
+let mapleader=" "
+
+vnoremap J :m '>+1<CR>
+vnoremap K :m '<-2<CR>
+
+if has('ide')
+  map \r <Action>(ReformatCode)
+  map <leader>f <Action>(FindInPath)
+  map <leader>r <Action>(ReplaceInPath)
+  map <leader>t <Action>(Refactorings.QuickListPopupAction)
+  map <leader>g <Action>(Generate)
+  map <leader>n <Action>(NewElement)
+  map <leader>b <Action>(GotoDeclaration)
+  map <leader>or <Action>(RecentFiles)
+endif
